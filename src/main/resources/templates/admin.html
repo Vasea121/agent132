@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Админ панель</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/current.css">
+</head>
+<body>
+<header>
+  <strong><a href="/">Рекламное агенство</a></strong>
+  <a sec:authorize="hasRole('ROLE_AGENT')" href="/requestAgent">Ваши заявки</a>
+  <a href="/profile">Профиль</a>
+  <a href="/currentUser">Мои обращения </a>
+  <a sec:authorize="hasRole('ROLE_ADMIN')" href="/admin">Админ панель</a>
+  <a href="/logout">Выйти</a>
+</header>
+<div class="context">
+    <table class="table" style="width: 1000px; margin: 0 auto;">
+        <thead>
+        <th>№</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Почта</th>
+        <th>Номер телефона</th>
+        <th>Логин</th>
+        <th>Роль</th>
+        <th>Удалить пользователя</th>
+        <th colspan="2">Действия</th>
+        </thead>
+
+        <div th:each="el : ${allUsers}">
+            <tr>
+                <td th:text="${el.id}"></td>
+                <td th:text="${el.first_name}"></td>
+                <td th:text="${el.last_name}"></td>
+                <td th:text="${el.email}"></td>
+              <td th:text="${el.number}"></td>
+                <td th:text="${el.username}"></td>
+                <td>
+                    <div th:each="role : ${el.roles}"><span th:text="${role.name}"></span></div>
+                </td>
+                <td>
+                    <form action="/admin/delete" method="post">
+                        <input type="hidden" name="userId" th:value="${el.id}"/>
+                        <button type="submit" class="btn btn-danger">Удалить</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/admin/giveAgent" method="post">
+                        <input type="hidden" name="userId" th:value="${el.id}"/>
+                        <button type="submit" class="btn btn-success">Сделать агентом</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/admin/deleteAgent" method="post">
+                        <input type="hidden" name="userId" th:value="${el.id}"/>
+                        <button type="submit" class="btn btn-warning">Удалить роли</button>
+                    </form>
+                </td>
+            </tr>
+        </div>
+    </table>
+  <p th:text="${delete_error}" style="float: right; margin: 20px; background: crimson"></p>
+</div>
+</body>
+</html>

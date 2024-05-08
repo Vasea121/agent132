@@ -1,0 +1,48 @@
+body{
+    background-image: url("../pictures/fon.jpeg");
+    background-size: cover;
+}
+
+li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+form{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.listAgent{
+    text-align: center;
+}
+
+button {
+    padding: 20px;
+    border-radius: 20px;
+    width: 400px;
+    height: 400px;
+}
+
+p{
+    display: inline;
+}
+
+header{
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    padding: 10px;
+    color: forestgreen;
+}

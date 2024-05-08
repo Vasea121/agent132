@@ -1,0 +1,43 @@
+.info{
+    width: 400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+}
+
+body{
+    background-image: url("../pictures/fon.jpeg");
+    background-size: cover;
+}
+
+.context{
+    padding-top: 50px;
+}
+
+p{
+    display: inline;
+    padding-bottom: 20px;
+}
+
+.form-control{
+    margin-bottom: 10px;
+}
+
+textarea{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+header{
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    padding: 10px;
+    color: forestgreen;
+}

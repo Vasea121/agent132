@@ -1,0 +1,48 @@
+body{
+    background-image: url("../pictures/fon.jpeg");
+    background-size: cover;
+}
+
+textarea{
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+p{
+    display: inline;
+}
+
+li{
+    list-style-type: none;
+}
+
+.requestArea{
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
+    padding: 50px;
+    border-radius: 20px;
+    background: #ffffff;
+}
+.context{
+    padding-top: 30px;
+}
+
+header{
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    padding: 10px;
+    color: forestgreen;
+}
+
+.table{
+    margin: 0 auto;
+    width: 1200px;
+    padding: 30px;
+}

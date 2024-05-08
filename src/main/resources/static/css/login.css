@@ -1,0 +1,33 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url("../pictures/login.jpeg");
+    background-size: cover;
+}
+
+.log{
+    margin-top: 200px;
+    width: 400px;
+    text-align: center;
+    padding: 50px;
+    float: right;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+.reg{
+    margin-top: 100px;
+    width: 400px;
+    text-align: center;
+    padding: 40px;
+    float: right;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+
+.context{
+    margin: 0 auto;
+    width: 1000px;
+}
+
